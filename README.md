@@ -1,4 +1,4 @@
-# Smart Automatic Flour Mill Control System
+# Smart Automatic FLOUR MILL MOTOR CONTROL USING PWM
 
 An Arduino-based automated flour mill control system that regulates the grinding motor speed using a stepper motor-controlled potentiometer and PWM control technique. The system allows digital speed adjustment through a keypad interface, providing accurate and efficient flour milling operation.
 
