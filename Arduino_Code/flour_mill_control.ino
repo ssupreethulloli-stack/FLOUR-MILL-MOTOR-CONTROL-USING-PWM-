@@ -70,5 +70,4 @@ void loop() {
 | 0   | 0°               |
 | *   | 360°             |
 
-The stepper motor position determines the potentiometer setting, which changes the PWM duty cycle and controls the speed of the flour mill motor.
 
