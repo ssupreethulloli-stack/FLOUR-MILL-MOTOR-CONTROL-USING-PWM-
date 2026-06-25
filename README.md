@@ -24,7 +24,6 @@ The Arduino receives user commands through a keypad and drives a stepper motor. 
 ![Prototype 1](39c53786-c3f0-4ab3-ad37-b6c0ae393187.png)
 
 ---
-
 ## Hardware Components
 
 | Component | Description |
