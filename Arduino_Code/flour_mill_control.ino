@@ -1,4 +1,3 @@
-
 #include <Keypad.h>
 #include <Stepper.h>
 
@@ -58,16 +57,5 @@ void loop() {
       moveToAngle(360);
   }
 }
-```
-
-### Key Functions
-
-| Key | Stepper Position |
-| --- | ---------------- |
-| 1   | 90°              |
-| 2   | 180°             |
-| 3   | 270°             |
-| 0   | 0°               |
-| *   | 360°             |
 
 
