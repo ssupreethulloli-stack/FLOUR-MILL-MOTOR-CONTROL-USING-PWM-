@@ -14,7 +14,7 @@ The Arduino receives user commands through a keypad and drives a stepper motor. 
 
 ## System Block Diagram
 
-![Block Diagram](39c53786-c3f0-4ab3-ad37-b6c0ae393187.png)
+![Block Diagram](48e56edb-ded6-4bf9-9118-5b742a424a4d.png)
 
 ---
 
