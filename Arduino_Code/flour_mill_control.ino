@@ -3,9 +3,10 @@
 
 #define STEPS 700
 
-Stepper motor1(STEPS, 9, 11, 10, 12);
-Stepper motor2(STEPS, 4, 6, 5, 7);
+// Stepper Motor Pins
+Stepper motor(STEPS, 9, 11, 10, 12);
 
+// Keypad Setup
 const byte ROWS = 4;
 const byte COLS = 3;
 
@@ -25,37 +26,53 @@ int currentPositionSteps = 0;
 
 void setup() {
   Serial.begin(9600);
-  motor1.setSpeed(60);
-  motor2.setSpeed(60);
-  Serial.println("System Ready");
+  motor.setSpeed(60);
+  Serial.println("Flour Mill Control System Ready");
 }
 
 void moveToAngle(int targetAngle) {
-  int targetSteps = (targetAngle / 360.0) * STEPS;
+
+  int targetSteps = (targetAngle * STEPS) / 360;
   int stepsToMove = targetSteps - currentPositionSteps;
 
   if (stepsToMove != 0) {
-    motor1.step(stepsToMove);
-    motor2.step(stepsToMove);
+    Serial.print("Moving to Angle: ");
+    Serial.println(targetAngle);
+
+    motor.step(stepsToMove);
+
     currentPositionSteps = targetSteps;
   }
 }
 
 void loop() {
+
   char key = keypad.getKey();
 
   if (key) {
-    if (key == '1')
-      moveToAngle(90);
-    else if (key == '2')
-      moveToAngle(180);
-    else if (key == '3')
-      moveToAngle(270);
-    else if (key == '0')
-      moveToAngle(0);
-    else if (key == '*')
-      moveToAngle(360);
+
+    switch(key) {
+
+      case '1':
+        moveToAngle(90);     // Low Speed
+        break;
+
+      case '2':
+        moveToAngle(180);    // Medium Speed
+        break;
+
+      case '3':
+        moveToAngle(270);    // High Speed
+        break;
+
+      case '0':
+        moveToAngle(0);      // Stop / Minimum Speed
+        break;
+
+      case '*':
+        moveToAngle(360);    // Maximum Speed
+        break;
+    }
   }
 }
-
 
